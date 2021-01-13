@@ -1,0 +1,6 @@
+<prescriptions-list>
+  <prescription-item
+    *ngFor="let prescription of prescriptions | async"
+    [prescription]="prescription"
+  ></prescription-item>
+</prescriptions-list>

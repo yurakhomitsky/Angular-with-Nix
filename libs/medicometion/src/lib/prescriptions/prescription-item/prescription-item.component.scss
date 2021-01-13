@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  width: 100%;
+}
+.prescription {
+  display: flex;
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4px;
+    flex: 1 1 0%;
+  }
+  &--index {
+    flex: 0;
+  }
+  &--title {
+    flex: 2;
+  }
+}
+.mat-expansion-panel {
+  border-radius: 0;
+}
+.mat-expansion-panel-header {
+  height: auto;
+  align-items: flex-start;
+  padding: 0;
+}
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+}
+.mat-expansion-panel-header-title {
+  margin: 0;
+}
+p {
+  font-size: 11px;
+  line-height: 16px;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+p,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.red,
+.black {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.red {
+  background-color: red;
+}
+.black {
+  background-color: black;
+}

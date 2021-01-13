@@ -1,0 +1,14 @@
+<div class="widgets">
+  <div class="widgets__title">
+    <h1>Widgets</h1>
+    <button mat-raised-button color="primary" (click)="openWidgetDialog()">
+      New widgets
+    </button>
+  </div>
+
+  <fem-production-angular-widgets-list
+    [widgets]="widgets$ | async"
+    (selected)="onSelected($event)"
+    (delete)="onDelete($event)"
+  ></fem-production-angular-widgets-list>
+</div>

@@ -1,0 +1,39 @@
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <div class="prescription">
+        <div class="prescription__column prescription--index">
+          <mat-checkbox></mat-checkbox>
+          <div class="statutes">
+            <span class="red"></span>
+            <span class="black"></span>
+          </div>
+        </div>
+        <div class="prescription__column prescription--title">
+          <h2>{{ prescription.drug.name }}</h2>
+          <p>{{ prescription.prescriptionText }} lore</p>
+        </div>
+        <div class="prescription__column prescription--refills">
+          <p>
+            {{ prescription.refills }} refills {{ prescription.duration }} Days
+          </p>
+          <p>No Auto-Expiration</p>
+        </div>
+        <div class="prescription__column prescription--pharmacy">
+          <p>{{ prescription.pharmacy.name }} lorem20</p>
+        </div>
+        <div class="prescription__column prescription--date-status">
+          <p>{{ prescription.observationDate }}</p>
+          <p>Current</p>
+          <p>{{ prescription.signedByUserName }}</p>
+        </div>
+      </div>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolor
+  doloribus ipsam eius deserunt et, rem excepturi nulla ut quisquam harum
+  laboriosam autem modi vel labore, corporis suscipit itaque at.
+  <mat-action-row>
+    <button mat-button color="primary">Next</button>
+  </mat-action-row>
+</mat-expansion-panel>

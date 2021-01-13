@@ -1,0 +1,24 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Widgets</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item
+        class="list__item"
+        *ngFor="let widget of widgets"
+        (click)="onSelect(widget)"
+      >
+        <div mat-line>{{ widget.title }}</div>
+        <div mat-line>{{ widget.description }}</div>
+        <mat-icon
+          class="delete-icon"
+          *ngIf="!readonly"
+          (click)="onDelete(widget); $event.stopImmediatePropagation()"
+          >delete</mat-icon
+        >
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

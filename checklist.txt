@@ -1,0 +1,49 @@
+Best practice front-end
+
+- Your routing table will generally describe your features.
+- A feature would generally give a route
+- A route will navigate to a container component
+- Everything inside that container component should be a presentaton component
+- A component should only do two things
+  - Consume just enough data to satisfy its templates
+  - Capture user events and delegate them upwards
+  - Components should be as thing as possible
+- Container Components should satisfy inputs using the async pipe
+- User feature should have no idea what is happening to widgets
+- Facades are an effective delegation layer between components and the rest of the app
+- Server communication and state management should be decoupled
+
+
+Facades:
+- Facades are controversial and can be misused
+- Facedes are pure delegation layer ad should not handle business logic
+- Facades provide a clean separation between components and the rest of your application
+- Just as inputs and outputs provide an API for your components
+- Facades are an excellent way to incrementally integrate ngrx
+- Facedes are great for mocking out a business logic layer
+
+
+Init workspace npx create-nx-workspace
+
+Firt we have to install  npm i --save-dev concurrently in order to run both back and front in the same time
+
+
+The serve:all command is a convenience methods that runs the serve:api and serve:web commands concurrently.
+You can run each command separately if you need to
+
+To add store: nx add @ngrx/store@10.0.1 --defaults=true --interactive=false
+To add Angular material npm run nx add @angular/material@10.2.7 --defaults=true --interactive=false
+
+
+nx g lib core-data --parent-module=apps/dashboard/src/app/app.module.ts --routing --style=scss - To generate lib
+We have to specify the name of module - "core-data" then where we need to import this module - "--parent-module=apps/dashboard/src/app/app.module.ts"
+
+
+To generate lib: nx g lib material --parent-module=apps/dashboard/src/app/app.module.ts --routing --style=scss
+To generate service: nx g s service/widgets/widgets --project=core-data
+To generate module: nx g m routing --flat=true --module app
+To generate component: nx g c widgets --module app --style=scss;   nx g c widgets/widgets-list --module app --style=scss
+To generate new app: ng g app name_app --linter=tslint --style=scss --routing=false -d; Flag -d to see what will be created, so to create use without flag -d
+                              package.json: "serve:name_app": "nx run client:serve --port=4400 --open"
+To generate a lib: ng g lib ui-toolbar --style=scss
+To generate component into the lib: nx g c toolbar/toolbar --project=ui-toolbar --style=scss

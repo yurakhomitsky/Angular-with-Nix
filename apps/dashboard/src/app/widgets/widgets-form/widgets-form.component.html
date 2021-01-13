@@ -1,0 +1,21 @@
+<div class="form" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Enter Title" formControlName="title" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Description" formControlName="description" />
+  </mat-form-field>
+  <div>
+    <button mat-button type="button" *ngIf="!exists" (click)="createWidget()">
+      Create
+    </button>
+    <button mat-button type="button" *ngIf="exists" (click)="updateWidget()">
+      Update
+    </button>
+    <button mat-button color="warn" type="button" (click)="cancelWidget()">
+      Cancel
+    </button>
+  </div>
+</div>

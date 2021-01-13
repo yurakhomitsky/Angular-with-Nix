@@ -1,0 +1,12 @@
+.delete-icon {
+  &:hover {
+    cursor: pointer;
+    color: red;
+  }
+}
+.list__item {
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(241, 241, 241);
+  }
+}

@@ -1,0 +1,15 @@
+.spacer {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 80px;
+  a {
+    color: black;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+.mat-raised-button {
+  color: black;
+}
